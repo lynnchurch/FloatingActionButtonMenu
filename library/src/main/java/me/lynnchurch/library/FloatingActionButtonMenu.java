@@ -133,6 +133,7 @@ public class FloatingActionButtonMenu extends LinearLayoutCompat
         List<Animator> itemAnims = new ArrayList<>();
         AnimatorSet set = new AnimatorSet();
         ObjectAnimator switchAnim = ObjectAnimator.ofFloat(v, "rotation", -225);
+        switchAnim.setInterpolator(new OvershootInterpolator());
         itemAnims.add(switchAnim);
 
         showMenuItems();

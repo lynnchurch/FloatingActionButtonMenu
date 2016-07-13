@@ -1,4 +1,14 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+publish{
+    userOrg='lynnchurch'
+    groupId='me.lynnchurch'
+    artifactId='floating-action-button-menu'
+    publishVersion='1.0.0'
+    desc='Use Google support library to achieve the FloatingActionButtonMenu, and the FloatingActionButton is in Google support library.'
+    website='https://github.com/lynnchurch/FloatingActionButtonMenu'
+}
 
 android {
     compileSdkVersion 24

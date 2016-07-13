@@ -42,7 +42,7 @@ dependencies {
 </me.lynnchurch.library.FloatingActionButtonMenu>
 ```  
 **3.** Set `OnMenuItemClickListener` in code:  
-```
+```JAVA
 FloatingActionButtonMenu fabMenu = (FloatingActionButtonMenu) findViewById(R.id.fab_menu);
 fabMenu.setOnMenuItemClickListener(new FloatingActionButtonMenu.OnMenuItemClickListener()
 {

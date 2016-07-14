@@ -71,10 +71,10 @@ public class FloatingActionButtonMenu extends LinearLayoutCompat
                 {
                     if (mExpanded && !mIsAnimRunning)
                     {
-                        collapse(view);
+                        collapse();
                     } else if (!mExpanded && !mIsAnimRunning)
                     {
-                        expand(view);
+                        expand();
                     }
                 }
             });
@@ -99,7 +99,7 @@ public class FloatingActionButtonMenu extends LinearLayoutCompat
                     {
                         mOnMenuItemClickListener.onMenuItemClick((FloatingActionButton) view,view.getId());
                     }
-                    collapse(mSwitchButton);
+                    collapse();
                 }
             });
             LayoutParams params = (LinearLayoutCompat.LayoutParams) item.getLayoutParams();
@@ -127,12 +127,12 @@ public class FloatingActionButtonMenu extends LinearLayoutCompat
         }
     }
 
-    public void expand(View v)
+    public void expand()
     {
         mExpanded = true;
         List<Animator> itemAnims = new ArrayList<>();
         AnimatorSet set = new AnimatorSet();
-        ObjectAnimator switchAnim = ObjectAnimator.ofFloat(v, "rotation", -225);
+        ObjectAnimator switchAnim = ObjectAnimator.ofFloat(mSwitchButton, "rotation", -225);
         switchAnim.setInterpolator(new OvershootInterpolator());
         itemAnims.add(switchAnim);
 
@@ -178,13 +178,13 @@ public class FloatingActionButtonMenu extends LinearLayoutCompat
         set.start();
     }
 
-    public void collapse(View v)
+    public void collapse()
     {
         mExpanded = false;
         List<Animator> itemAnims = new ArrayList<>();
         AnimatorSet set = new AnimatorSet();
 
-        ObjectAnimator switchAnim = ObjectAnimator.ofFloat(v, "rotation", 0);
+        ObjectAnimator switchAnim = ObjectAnimator.ofFloat(mSwitchButton, "rotation", 0);
         switchAnim.setInterpolator(new AnticipateOvershootInterpolator());
         itemAnims.add(switchAnim);
 
@@ -237,5 +237,10 @@ public class FloatingActionButtonMenu extends LinearLayoutCompat
     public interface OnMenuItemClickListener
     {
         void onMenuItemClick(FloatingActionButton button,int btnId);
+    }
+
+    public boolean isExpanded()
+    {
+        return mExpanded;
     }
 }

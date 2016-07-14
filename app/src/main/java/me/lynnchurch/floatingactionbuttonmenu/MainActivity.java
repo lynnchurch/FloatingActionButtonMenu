@@ -3,15 +3,21 @@ package me.lynnchurch.floatingactionbuttonmenu;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import me.lynnchurch.library.FloatingActionButtonMenu;
 
 public class MainActivity extends AppCompatActivity
 {
+    private List<String> mItems=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -20,7 +26,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButtonMenu fabMenu=(FloatingActionButtonMenu)findViewById(R.id.fab_menu);
+        FloatingActionButtonMenu fabMenu = (FloatingActionButtonMenu) findViewById(R.id.fab_menu);
         fabMenu.setOnMenuItemClickListener(new FloatingActionButtonMenu.OnMenuItemClickListener()
         {
             @Override
@@ -41,6 +47,15 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
+
+        for (int i = 0; i <50 ; i++)
+        {
+            mItems.add("item"+i);
+        }
+        StringsAdapter mAdapter=new StringsAdapter(mItems);
+        RecyclerView rv_items=(RecyclerView)findViewById(R.id.rv_items);
+        rv_items.setAdapter(mAdapter);
+        rv_items.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override

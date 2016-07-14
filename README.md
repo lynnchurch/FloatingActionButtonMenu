@@ -65,3 +65,7 @@ fabMenu.setOnMenuItemClickListener(new FloatingActionButtonMenu.OnMenuItemClickL
     }
 });
 ```
+**4.** And you can set `app:layout_behavior`:
+```
+app:layout_behavior="me.lynnchurch.library.ScrollAwareFABMenuBehavior"
+```

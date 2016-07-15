@@ -1,7 +1,7 @@
 # FloatingActionButtonMenu
 [ ![Download](https://api.bintray.com/packages/lynnchurch/maven/floating-action-button-menu/images/download.svg) ](https://bintray.com/lynnchurch/maven/floating-action-button-menu/_latestVersion)
 # Description
-Use Google support library to achieve the FloatingActionButtonMenu and wrap android.support.design.widget.FloatingActionButton.  
+Use FloatingActionButtonMenu to wrap android.support.design.widget.FloatingActionButton.  
 
 ![demo](gif/FloatingActionButtonMenu.gif)
 

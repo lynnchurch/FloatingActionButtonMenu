@@ -9,7 +9,7 @@ Use FloatingActionButtonMenu to wrap android.support.design.widget.FloatingActio
 **1.** Add a dependency to your `build.gradle`:
 ```
 dependencies {
-    compile 'me.lynnchurch:floating-action-button-menu:1.0.0'
+    compile 'me.lynnchurch:floating-action-button-menu:1.1.0'
 }
 ```
 **2.** Add the `me.lynnchurch.library.FloatingActionButtonMenu` to your layout XML file.  
